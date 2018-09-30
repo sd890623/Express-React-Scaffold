@@ -13,7 +13,6 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -21,16 +20,34 @@ module.exports = {
     })
   ],
   module: {
-      loaders: [
-      { test: /\.html$/, loaders: ['react-hot', 'file-loader?name=[name].[ext]'], include: path.join(__dirname, 'client', 'src') },
-      { test: /\.js$/, loaders: ['react-hot', 'babel'], include: path.join(__dirname, 'client', 'src') },
-      { test: /\.css$/, loaders: ['react-hot', 'style-loader', 'css-loader'] },
-      { test: /\.png$/, loader: 'url-loader?limit=100000' },
-      { test: /\.jpg$/, loader: 'file-loader?name=/images/[name].[ext]' },
-      { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[ext]&limit=10000&mimetype=application/font-woff' }, //
+    rules: [
+      { test: /\.html$/, use: ['file-loader?name=[name].[ext]'], include: path.join(__dirname, 'client', 'src') },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$|\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'url-loader',
+        query: {
+          limit: 1,
+          name: 'images/[name].[ext]?[hash:5]'
+        }
+      },
+      { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[ext]&limit=10000&mimetype=application/font-woff' },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[ext]&limit=10000&mimetype=application/octet-stream' },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[ext]' }, //
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[ext]&limit=10000&mimetype=image/svg+xml'}//
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[ext]' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[ext]&limit=10000&mimetype=image/svg+xml'}
     ]
   },
   devServer: {

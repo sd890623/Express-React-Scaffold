@@ -6,8 +6,8 @@ export default class ExpressJS extends React.Component {
 	render(){
 		return (	
 			<div className="container">
-				<p className="lead">ExpressJS</p>				
-				<p>ExpressJS is the server side framework for NodeJS platform.</p>						
+				<p className="lead">My name is Daniel Sun</p>
+				<p>And I'm a full-stack developer</p>
 			</div>
 		)
 	}
