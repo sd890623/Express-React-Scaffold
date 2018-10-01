@@ -4,14 +4,17 @@ import { Provider } from 'react-redux';
 import configureStore from '../config/store.config';
 
 import Header from './Header';
+import '../style.scss';
 
 export default class UserLayout extends PureComponent {
   render(){
     return (
 			<Provider store={configureStore({ initialState: {} })}>
-				<div id="app-container vicinity-app" className="container-fluid">
+				<div id="vicinity-app" className="container-fluid">
 					<Header />
-          {this.props.children}
+					<div className="body container">
+          	{this.props.children}
+					</div>
 				</div>
 			</Provider>
     );

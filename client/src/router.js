@@ -4,8 +4,8 @@ import { Router, Route, IndexRoute, Link, IndexLink, browserHistory, hashHistory
 import UserLayout from './components/Layout';
 
 import HomePage from './components/HomePage';
-import SalesPage from './components/SalesComponent/SalesComponent';
-import StorePage from './components/StoreComponent/StoreComponent';
+import SalesPage from './components/SalesComponent/SalesPage';
+import StorePage from './components/StoreComponent/StorePage';
 
 const AppRouter = () => (
 	<Router history={browserHistory}>

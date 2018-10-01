@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { ButtonGroup, Button } from 'react-bootstrap';
-import superagent from 'superagent';
+import * as api from '../utils/api';
+import { JSON_TYPE } from '../utils/api'
 
 export default class Header extends Component {
 
@@ -11,14 +12,21 @@ export default class Header extends Component {
 	}
 
 	componentWillMount(){
-        superagent
-            .get('/api/hello')
-            .end((err, res) => {
-                this.setState({
-                    heading: res.body.msg
-                });
-            });
-    }
+    api.get('hello', JSON_TYPE)
+      .then((response) => {
+        if (response.error_msg) {
+          console.warn(response.error_msg);
+        } else {
+          this.setState({
+            heading: response.msg
+          });
+        }
+        return null;
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+	}
 
 	render(){
 		return (

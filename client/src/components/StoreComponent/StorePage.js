@@ -1,11 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react';
 
-export default class NodeJS extends React.Component {
+export default class StorePage extends Component {
 
 	render(){
 		return (
-			<div className="container">
+			<div className="store-page">
 				<p className="lead">NodeJS</p>
 				<p>NodeJS is the platform to run javascript on Google's V8 engine.</p>
 			</div>				
