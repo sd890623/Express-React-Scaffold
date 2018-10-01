@@ -5,7 +5,7 @@ const FindCenter = require('../Queries/FindCenter');
 
 const router = express.Router();
 
-router.get('/hello', (req, res, next) => res.send({ msg: 'Vicinity Center'}));
+router.get('/hello', (req, res, next) => res.json({ msg: 'Vicinity Center'}));
 router.get('/findTotalSales', FindTotalSales.findAll);
 router.get('/findTotalSalesByCenter', FindTotalSales.findByCenter);
 router.get('/findTotalSalesByState', FindTotalSales.findByState);

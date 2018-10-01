@@ -1,12 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const ENTRY_POINTS = [ './client/src/index' ];
-const DEV_ENTRY_POINTS = ENTRY_POINTS.concat( [ 'webpack-hot-middleware/client' ] );
+const ENTRY_POINTS = './client/src/index';
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: process.NODE_ENV === 'production' ? ENTRY_POINTS : DEV_ENTRY_POINTS,
+  entry: ENTRY_POINTS,
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',

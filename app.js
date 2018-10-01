@@ -17,8 +17,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/api', index);
-app.use('/', (req, res, next) => res.sendFile(path.join(__dirname, 'dist', 'index.html')));
-app.set('view engine', 'jade');
+app.use('/', (req, res, next) => res.sendFile(path.join(__dirname, 'client', 'index.html')));
+app.set('view engine', 'pug');
+app.set('views', __dirname + '/server/Views');
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
