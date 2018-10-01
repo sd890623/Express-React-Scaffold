@@ -3,7 +3,6 @@ import { ControlLabel, FormControl, Button } from 'react-bootstrap';
 import bindAll from 'lodash/bindAll';
 import * as api from '../../utils/api';
 import { JSON_TYPE } from '../../utils/api'
-import './SalesComponent.scss'
 
 export default class SalesByState extends Component {
 	constructor(props) {
@@ -12,12 +11,12 @@ export default class SalesByState extends Component {
 			state: 'VIC',
     	result: 0
 		};
-    bindAll(this, ['submitByState']);
+    bindAll(this, ['submit']);
     this.stateList = ['VIC', 'NSW', 'WA', 'SA'];
 	}
 
-  submitByState() {
-    api.get(`getTotalSalesByState?state=${this.state.state}`, JSON_TYPE)
+  submit() {
+    api.get(`findTotalSalesByState?state=${this.state.state}`, JSON_TYPE)
       .then((response) => {
         if (response.error_msg) {
           console.warn(response.error_msg);
@@ -50,7 +49,7 @@ export default class SalesByState extends Component {
           ))};
 				</FormControl>
 				<Button
-					onClick={this.submitByState}
+					onClick={this.submit}
 				>
 					Submit
 				</Button>

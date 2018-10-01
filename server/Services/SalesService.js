@@ -1,6 +1,6 @@
 const FileService = require('./FileService');
 
-exports.getTotalSales = function () {
+exports.findTotalSales = function () {
   const data = FileService.parseFile();
   let totalSales = 0;
   data.forEach(each => {
@@ -9,7 +9,7 @@ exports.getTotalSales = function () {
   return totalSales;
 };
 
-exports.getTotalSalesByCenter = function (center) {
+exports.findTotalSalesByCenter = function (center) {
   const data = FileService.parseFile();
   let totalSales = 0;
   data.forEach(each => {
@@ -20,7 +20,7 @@ exports.getTotalSalesByCenter = function (center) {
   return totalSales;
 };
 
-exports.getTotalSalesByState = function (state) {
+exports.findTotalSalesByState = function (state) {
   const data = FileService.parseFile();
   let totalSales = 0;
   data.forEach(each => {

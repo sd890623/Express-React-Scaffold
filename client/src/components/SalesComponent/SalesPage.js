@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { ControlLabel, FormControl, Button } from 'react-bootstrap';
 import './SalesComponent.scss'
 import SalesByStore from './SalesByStore';
 import SalesByState from './SalesByState';

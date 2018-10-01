@@ -3,7 +3,6 @@ import { ControlLabel, FormControl, Button } from 'react-bootstrap';
 import bindAll from 'lodash/bindAll';
 import * as api from '../../utils/api';
 import { JSON_TYPE } from '../../utils/api'
-import './SalesComponent.scss'
 
 export default class SalesByStore extends Component {
 	constructor(props) {
@@ -12,12 +11,12 @@ export default class SalesByStore extends Component {
 			storeName: 'Chadstone',
     	result: 0
 		};
-    bindAll(this, ['submitByStore']);
+    bindAll(this, ['submit']);
 	}
 
-  submitByStore() {
+  submit() {
 		const param = { store: this.state.storeName };
-    api.get(`getTotalSalesByCenter?center=${this.state.storeName}`, JSON_TYPE)
+    api.get(`findTotalSalesByCenter?center=${this.state.storeName}`, JSON_TYPE)
       .then((response) => {
         if (response.error_msg) {
           console.warn(response.error_msg);
@@ -44,7 +43,7 @@ export default class SalesByStore extends Component {
 					onChange={e => this.setState({ storeName: e.target.value })}
 				/>
 				<Button
-					onClick={this.submitByStore}
+					onClick={this.submit}
 				>
 					Submit
 				</Button>

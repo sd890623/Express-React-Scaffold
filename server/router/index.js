@@ -1,11 +1,15 @@
 const express = require('express');
 const path = require('path');
-const GetTotalSalesByCenter = require('../Queries/GetTotalSales');
+const FindTotalSales = require('../Queries/FindTotalSales');
+const FindCenter = require('../Queries/FindCenter');
+
 const router = express.Router();
 
 router.get('/hello', (req, res, next) => res.send({ msg: 'Vicinity Center'}));
-router.get('/getTotalSales', GetTotalSalesByCenter.getAll);
-router.get('/getTotalSalesByCenter', GetTotalSalesByCenter.getByCenter);
-router.get('/getTotalSalesByState', GetTotalSalesByCenter.getByState);
+router.get('/findTotalSales', FindTotalSales.findAll);
+router.get('/findTotalSalesByCenter', FindTotalSales.findByCenter);
+router.get('/findTotalSalesByState', FindTotalSales.findByState);
+router.get('/findStoreHighSales', FindCenter.findStoreWithMostSales);
+router.get('/findStoreHighPSM', FindCenter.findStoreWithHighestPSM);
 
 module.exports = router;
