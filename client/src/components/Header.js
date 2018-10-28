@@ -43,6 +43,9 @@ export default class Header extends Component {
 					<Link to="/find-a-store">
 						<button className="btn btn-default btn-sm">Find more about a specific store</button>
 					</Link>
+          <Link to="/aws">
+            <button className="btn btn-default btn-sm">Control aws service</button>
+          </Link>
 					<Link to="/">
 						<button className="btn btn-default btn-sm">Go back home</button>
 					</Link>

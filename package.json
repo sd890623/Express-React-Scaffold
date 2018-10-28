@@ -26,6 +26,7 @@
   ],
   "author": "Arpit Goyal <arpit.go4@gmail.com> (http://github.com/arpitgo4)",
   "dependencies": {
+    "aws-sdk": "^2.344.0",
     "babel-polyfill": "6.23.0",
     "bluebird": "3.5.2",
     "body-parser": "~1.16.0",
