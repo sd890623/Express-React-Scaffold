@@ -13,5 +13,7 @@ router.get('/findTotalSalesByState', FindTotalSales.findByState);
 router.get('/findStoreHighSales', FindCenter.findStoreWithMostSales);
 router.get('/findStoreHighPSM', FindCenter.findStoreWithHighestPSM);
 router.get('/startServer', AwsQueries.startEc2Server);
+router.get('/stopServer', AwsQueries.stopEc2Server);
+router.get('/serverStatus', AwsQueries.serverStatus)
 
 module.exports = router;
