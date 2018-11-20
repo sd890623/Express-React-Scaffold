@@ -1,4 +1,4 @@
-let apiBaseUrl = 'http://localhost:8080/api/';
+let apiBaseUrl = `${document.location.origin}/api/`;
 
 const applicationConfig = {
   apiBaseUrl
