@@ -8,3 +8,4 @@ dist/
 npm-debug*
 
 .coveralls.yml
+node_modules
