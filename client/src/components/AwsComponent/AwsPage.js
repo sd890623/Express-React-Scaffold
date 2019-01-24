@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ControlLabel, FormControl, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import * as api from '../../utils/api';
 import { JSON_TYPE } from '../../utils/api'
 import bindAll from 'lodash/bindAll';

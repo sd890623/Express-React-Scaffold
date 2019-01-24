@@ -4,20 +4,15 @@ const webpack = require('webpack');
 const ENTRY_POINTS = './client/src/index';
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool : 'cheap-module-source-map',
   entry: ENTRY_POINTS,
   output: {
     path: path.join(__dirname, 'dist'),
+    sourceMapFilename: "bundle.js.map",
     filename: 'bundle.js',
     publicPath: '/'
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    })
-  ],
+  plugins: [],
   module: {
     rules: [
       { test: /\.html$/, use: ['file-loader?name=[name].[ext]'], include: path.join(__dirname, 'client', 'src') },

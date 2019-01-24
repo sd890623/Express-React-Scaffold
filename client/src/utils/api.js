@@ -1,6 +1,4 @@
 import 'whatwg-fetch';
-import _ from 'lodash';
-import Promise from 'bluebird';
 import EventEmitter from 'event-emitter';
 import HttpError from 'standard-http-error';
 import config from '../utils/conf';
