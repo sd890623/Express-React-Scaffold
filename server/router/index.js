@@ -6,7 +6,7 @@ const AwsQueries = require('../Queries/AwsQueries');
 
 const router = express.Router();
 
-router.get('/hello', (req, res, next) => res.json({ msg: 'Vicinity Center'}));
+router.get('/hello', (req, res, next) => res.json({ msg: 'My toolbox'}));
 router.get('/findTotalSales', FindTotalSales.findAll);
 router.get('/findTotalSalesByCenter', FindTotalSales.findByCenter);
 router.get('/findTotalSalesByState', FindTotalSales.findByState);
