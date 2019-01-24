@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/api', index);
+app.use('/assets', express.static(path.join(__dirname, 'client/assets')));
 app.use('/', (req, res, next) => res.sendFile(path.join(__dirname, 'client', 'index.html')));
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/server/Views');
