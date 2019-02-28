@@ -37,12 +37,6 @@ export default class Header extends Component {
 					</h1>
 				</div>
 				<ButtonGroup vertical>
-					<Link to="/total-sales">
-						<button className="btn btn-default btn-sm">Find more about total sales</button>
-					</Link>
-					<Link to="/find-a-store">
-						<button className="btn btn-default btn-sm">Find more about a specific store</button>
-					</Link>
 					<Link to="/">
 						<button className="btn btn-default btn-sm">Go back home</button>
 					</Link>
